@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form id="login">
+<input id="user" placeholder="Username"><br><br>
+<input id="pass" type="password" placeholder="Password"><br><br>
+<button>Login</button>
+<p id="msg"></p>
+</form>
+
+<script>
+document.getElementById("login").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let u = /^.{5,}$/.test(document.getElementById("user").value);
+  let p = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[@#$%^&+=]).{8,}$/
+  .test(document.getElementById("pass").value);
+
+  document.getElementById("msg").innerHTML = (u && p) ? "Login Successful" : "Invalid";
+});
+</script>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form id="booking">
+<input id="name" placeholder="Name"><br><br>
+<input id="email" placeholder="Email"><br><br>
+<input id="seats" placeholder="Seats"><br><br>
+<button>Book</button>
+</form>
+<p id="output"></p>
+
+<script>
+document.getElementById("booking").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = /^[A-Za-z ]+$/.test(document.getElementById("name").value);
+  const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById("email").value);
+  const seats = /^[1-9]|10$/.test(document.getElementById("seats").value);
+
+  if (name && email && seats) {
+    const booking = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      seats: document.getElementById("seats").value
+    };
+    document.getElementById("output").innerHTML = JSON.stringify(booking);
+  } else {
+    document.getElementById("output").innerHTML = "Invalid";
+  }
+});
+</script>
+</body>
+</html>

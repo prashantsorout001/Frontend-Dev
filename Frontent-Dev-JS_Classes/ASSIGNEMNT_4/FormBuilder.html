@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="formContainer"></div>
+<button id="submit">Submit</button>
+<p id="data"></p>
+
+<script>
+class FormBuilder {
+  constructor(fields) {
+    this.fields = fields;
+  }
+
+  render() {
+    let html = "";
+    this.fields.forEach(f => {
+      html += `<label>${f.label}</label>
+      <input type="${f.type}" id="${f.label}" /><br><br>`;
+    });
+    document.getElementById("formContainer").innerHTML = html;
+  }
+
+  getFormData() {
+    let obj = {};
+    this.fields.forEach(f => {
+      obj[f.label] = document.getElementById(f.label).value;
+    });
+    return obj;
+  }
+}
+
+const form = new FormBuilder([
+  { type: "text", label: "Username" },
+  { type: "email", label: "Email" }
+]);
+
+form.render();
+
+document.getElementById("submit").onclick = () => {
+  document.getElementById("data").innerHTML = JSON.stringify(form.getFormData());
+};
+</script>
+</body>
+</html>

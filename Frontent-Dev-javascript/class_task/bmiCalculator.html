@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator</title>
+  <style>
+    body { 
+      font-family: Arial; 
+      padding: 20px; 
+      max-width: 400px; 
+      margin: auto;
+    }
+    input { 
+      padding: 8px; 
+      width: 100%; 
+      margin-top: 5px; 
+      margin-bottom: 10px; 
+    }
+    button { 
+      padding: 10px; 
+      width: 100%; 
+      cursor: pointer; 
+      background: #007bff; 
+      border: none; 
+      color: white; 
+      font-size: 16px; 
+    }
+    #result{
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Progress Bar */
+    .bar-container {
+      width: 100%;
+      background: #eee;
+      height: 20px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .bar {
+      height: 100%;
+      width: 0;
+      background: green;
+      border-radius: 8px;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+<h2>BMI Calculator</h2>
+
+<label>Weight (kg)</label>
+<input type="number" id="weight">
+
+<label>Height (meters)</label>
+<input type="number" id="height" step="0.01">
+
+<button onclick="calculateBMI()">Calculate BMI</button>
+
+<p id="result"></p>
+
+<div class="bar-container">
+  <div class="bar" id="bmiBar"></div>
+</div>
+
+<script>
+function calculateBMI() {
+  const weight = Number(document.getElementById("weight").value);
+  const height = Number(document.getElementById("height").value);
+
+  const bmi = weight / (height * height);
+  let message = "";
+
+  if (bmi < 18.5) {
+    message = "Underweight";
+    document.getElementById("bmiBar").style.background = "orange";
+  } 
+  else if (bmi < 24.9) {
+    message = "Normal";
+    document.getElementById("bmiBar").style.background = "green";
+  } 
+  else if (bmi < 29.9) {
+    message = "Overweight";
+    document.getElementById("bmiBar").style.background = "yellow";
+  } 
+  else {
+    message = "Obese";
+    document.getElementById("bmiBar").style.background = "red";
+  }
+
+  document.getElementById("result").innerText = 
+    `BMI: ${bmi.toFixed(2)} - ${message}`;
+
+  // Progress bar (scale BMI out of 40)
+  const barWidth = Math.min((bmi / 40) * 100, 100);
+  document.getElementById("bmiBar").style.width = barWidth + "%";
+}
+</script>
+
+</body>
+</html>

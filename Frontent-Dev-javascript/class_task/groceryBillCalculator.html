@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grocery Bill Calculator</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input { margin: 5px; padding: 8px; width: 200px; }
+    button { padding: 10px 15px; cursor: pointer; }
+    #result { margin-top: 15px; font-size: 18px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h2>Grocery Bill Calculator</h2>
+
+<input type="number" id="price" placeholder="Enter Price">
+<input type="number" id="quantity" placeholder="Enter Quantity">
+
+<button onclick="calculateBill()">Calculate Bill</button>
+
+<p id="result"></p>
+
+<script>
+function calculateBill() {
+  const price = Number(document.getElementById("price").value);
+  const quantity = Number(document.getElementById("quantity").value);
+  let total = price * quantity;
+
+  if (total > 1000) {
+    total = total - total * 0.10;
+  }
+
+  document.getElementById("result").innerText = "Final Amount: ₹" + total;
+}
+</script>
+
+</body>
+</html>

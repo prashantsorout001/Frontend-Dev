@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Interface Components</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #fde2e4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Container */
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 320px;
+}
+
+/* Heading */
+.card h2 {
+  margin: 0;
+  color: #333;
+}
+
+/* Search Bar */
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.4);
+  outline: none;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #0069d9;
+}
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+/* Dropdown */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+select:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40,167,69,0.5);
+  outline: none;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>User Interface Components</h2>
+  <input type="text" placeholder="Search here..." class="search-input">
+
+  <div style="display:flex; gap:10px;">
+    <button class="btn btn-primary">Search</button>
+    <button class="btn btn-secondary">Cancel</button>
+  </div>
+
+  <select>
+    <option selected disabled>Select Option</option>
+    <option>Profile</option>
+    <option>Settings</option>
+    <option>Logout</option>
+  </select>
+</div>
+
+</body>
+</html>

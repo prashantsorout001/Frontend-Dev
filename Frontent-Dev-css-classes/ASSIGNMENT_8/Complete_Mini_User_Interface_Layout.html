@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini User Interface Layout</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:linear-gradient(120deg,#dbeafe,#fce7f3);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+/* header and footer */
+header,footer{
+  background:#007bff;
+  color:#fff;
+  text-align:center;
+  padding:10px 0;
+  width:100%;
+}
+
+/* main card */
+.main-card{
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  width:320px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin:20px 0;
+}
+
+input{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  transition:all 0.3s ease;
+}
+input:focus{
+  border-color:#007bff;
+  box-shadow:0 0 4px rgba(0,123,255,0.4);
+  outline:none;
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:6px;
+  background:#007bff;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 3px 6px rgba(0,0,0,0.2);
+}
+button:hover{
+  background:#0062cc;
+  transform:scale(1.05);
+}
+button:active{
+  transform:scale(0.98);
+}
+
+/* image */
+img{
+  width:100%;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Mini User Interface Layout</h2>
+</header>
+
+<div class="main-card">
+  <img src="https://via.placeholder.com/300x150" alt="Sample Image">
+  <input type="text" placeholder="Enter your name">
+  <button>Submit</button>
+</div>
+
+<footer>
+  <p>&copy; 2025 Mini UI Page</p>
+</footer>
+
+</body>
+</html>

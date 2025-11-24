@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip Demonstration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 140px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 6px;
+      border-radius: 5px;
+
+      position: absolute;
+      bottom: 125%; /* Position above the element */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Show tooltip on hover */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Small arrow below tooltip */
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="tooltip">💡
+      <span class="tooltiptext">Idea or Tip</span>
+    </div>
+
+    <div class="tooltip">📞
+      <span class="tooltiptext">Contact Info</span>
+    </div>
+
+    <div class="tooltip">🔍
+      <span class="tooltiptext">Search Something</span>
+    </div>
+
+    <div class="tooltip">⚙️
+      <span class="tooltiptext">Settings</span>
+    </div>
+
+    <div class="tooltip">📧
+      <span class="tooltiptext">Send Email</span>
+    </div>
+  </div>
+
+</body>
+</html>

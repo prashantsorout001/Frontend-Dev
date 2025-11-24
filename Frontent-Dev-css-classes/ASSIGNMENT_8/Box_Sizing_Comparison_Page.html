@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box-Sizing Comparison</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+
+.container{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.box{
+  width:200px;
+  padding:20px;
+  color:#fff;
+  text-align:center;
+  border:5px solid #000;
+}
+
+.default{
+  box-sizing:content-box;
+  background:#007bff;
+}
+
+.border-box{
+  box-sizing:border-box;
+  background:#28a745;
+}
+
+p{
+  margin-top:20px;
+  width:80%;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h2>Box-Sizing Comparison</h2>
+
+<div class="container">
+  <div class="box default">Default (content-box)</div>
+  <div class="box border-box">With border-box</div>
+</div>
+
+<p>Notice how both boxes have the same width and padding, but the green one with <b>box-sizing: border-box</b> includes padding and border inside the total size.</p>
+
+</body>
+</html>

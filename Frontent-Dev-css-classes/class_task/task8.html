@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box-Sizing Comparison</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f9ff, #e6eeff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* main container */
+.wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.box-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* common box style */
+.box {
+  width: 200px;
+  padding: 30px;
+  border: 5px solid #333;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* default content-box */
+.content-box {
+  background: #007bff;
+  box-sizing: content-box;
+}
+
+/* border-box */
+.border-box {
+  background: #28a745;
+  box-sizing: border-box;
+}
+
+.note {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <h2>Box-Sizing Comparison</h2>
+
+  <div class="box-area">
+    <div class="box content-box">Content-Box</div>
+    <div class="box border-box">Border-Box</div>
+  </div>
+
+  <p class="note">
+    Both boxes have the same <strong>width (200px)</strong>, <strong>padding (30px)</strong>, 
+    and <strong>border (5px)</strong>.  
+    The blue box uses the <strong>default content-box</strong> model, so its total size 
+    includes padding and border.  
+    The green box uses <strong>border-box</strong>, where padding and border are 
+    included within the total width.
+  </p>
+</div>
+
+</body>
+</html>

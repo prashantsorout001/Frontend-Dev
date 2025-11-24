@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-Classes Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+    }
+
+    /* :hover example */
+    a:hover {
+      color: red;
+    }
+
+    /* :focus example */
+    input:focus {
+      border: 2px solid blue;
+    }
+
+    /* :active example */
+    button:active {
+      background-color: green;
+      color: white;
+    }
+
+    /* :nth-child example */
+    li:nth-child(odd) {
+      background: #e6f0ff;
+    }
+    li:nth-child(even) {
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pseudo-Class Examples</h1>
+  <div class="container">
+    <div class="box">
+      <a href="#">Hover over me</a>
+      <p>:hover → Changes color on hover</p>
+    </div>
+
+    <div class="box">
+      <input type="text" placeholder="Click me">
+      <p>:focus → Highlights border when active</p>
+    </div>
+
+    <div class="box">
+      <button>Click Me</button>
+      <p>:active → Changes color when clicked</p>
+    </div>
+
+    <div class="box">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <p>:nth-child() → Alternates list color</p>
+    </div>
+  </div>
+</body>
+</html>

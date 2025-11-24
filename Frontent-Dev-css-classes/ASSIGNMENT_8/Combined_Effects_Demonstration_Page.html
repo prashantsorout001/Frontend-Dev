@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combined Effects Demo</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:linear-gradient(135deg,#f0f9ff,#e6e6fa);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 25px;
+  font-size:16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  color:#fff;
+  background:#007bff;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+/* combined effects */
+.btn:hover{
+  background:#0056b3;
+  transform:scale(1.1);
+  box-shadow:0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn:active{
+  transform:scale(1);
+  background:#003f88;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <button class="btn">Hover Me</button>
+  <button class="btn">Try Me</button>
+  <button class="btn">Click Me</button>
+</div>
+
+</body>
+</html>

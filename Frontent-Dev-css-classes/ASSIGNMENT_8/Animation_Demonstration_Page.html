@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Animation Demonstration Page</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f0f0f0;
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap:40px;
+}
+
+/* moving box */
+.box{
+  width:100px;
+  height:100px;
+  background:#007bff;
+  border-radius:8px;
+  animation: moveBox 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveBox{
+  0%{ transform:translateX(0); background:#007bff; }
+  50%{ transform:translateX(150px); background:#00bcd4; }
+  100%{ transform:translateX(0); background:#007bff; }
+}
+
+/* bouncing ball */
+.ball{
+  width:70px;
+  height:70px;
+  background:#ff4757;
+  border-radius:50%;
+  animation: bounce 1.5s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+@keyframes bounce{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-120px); }
+  100%{ transform:translateY(0); }
+}
+
+/* color changing text */
+.text{
+  font-size:24px;
+  font-weight:bold;
+  animation: colorChange 4s ease-in-out infinite;
+  animation-delay:1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes colorChange{
+  0%{ color:#ff0000; }
+  25%{ color:#00bcd4; }
+  50%{ color:#28a745; }
+  75%{ color:#ff9900; }
+  100%{ color:#ff0000; }
+}
+
+footer{
+  position:fixed;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+  font-size:14px;
+  color:#555;
+}
+</style>
+</head>
+<body>
+
+<h1 class="text">CSS Animation Demo</h1>
+
+<div class="box"></div>
+
+<div class="ball"></div>
+
+<footer>&copy; 2025 Animation Practice Page</footer>
+
+</body>
+</html>

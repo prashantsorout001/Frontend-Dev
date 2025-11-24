@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Button Collection</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:linear-gradient(135deg,#f8f9fa,#e3f2fd);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+/* flex container for all buttons */
+.btn-box{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* common button styling */
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  transition:all 0.3s ease;
+}
+
+/* button types */
+.primary{
+  background:#007bff;
+  color:#fff;
+}
+
+.secondary{
+  background:#6c757d;
+  color:#fff;
+}
+
+.outline{
+  background:transparent;
+  border:2px solid #007bff;
+  color:#007bff;
+}
+
+.disabled{
+  background:#d6d6d6;
+  color:#888;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+/* hover effects */
+button:hover:not(.disabled){
+  transform:scale(1.05);
+  box-shadow:0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* active state */
+button:active:not(.disabled){
+  transform:scale(0.98);
+  box-shadow:0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* focus state */
+button:focus{
+  outline:2px solid #0056b3;
+  outline-offset:2px;
+}
+</style>
+</head>
+<body>
+
+<div class="btn-box">
+  <button class="primary">Primary</button>
+  <button class="secondary">Secondary</button>
+  <button class="outline">Outline</button>
+  <button class="disabled" disabled>Disabled</button>
+</div>
+
+</body>
+</html>

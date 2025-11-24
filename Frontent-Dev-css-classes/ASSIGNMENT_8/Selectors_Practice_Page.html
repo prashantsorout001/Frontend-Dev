@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Practice Page</title>
+  <style>
+    /* basic page setup */
+    body{
+      font-family: Arial, sans-serif;
+      background:#f2f2f2;
+      margin:0;
+      padding:0;
+    }
+
+    header,footer{
+      background:#007acc;
+      color:#fff;
+      text-align:center;
+      padding:15px 0;
+    }
+
+    main{
+      background:#fff;
+      max-width:900px;
+      margin:20px auto;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* element selector */
+    p{
+      color:#333;
+      margin-bottom:10px;
+    }
+
+    /* class selector */
+    .highlight{
+      background:yellow;
+      font-weight:bold;
+      padding:2px 4px;
+    }
+
+    /* id selector */
+    #special{
+      color:#d12b2b;
+      font-size:18px;
+    }
+
+    /* attribute selector */
+    a[target="_blank"]{
+      color:#1e90ff;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    a[target="_blank"]:hover{
+      text-decoration:underline;
+    }
+
+    /* descendant selector */
+    div p{
+      color:#444;
+      font-style:italic;
+    }
+
+    /* child selector (>) */
+    ul > li{
+      color:#008000;
+      margin-bottom:5px;
+    }
+
+    /* adjacent sibling selector (+) */
+    h2 + p{
+      background:#e2e2e2;
+      padding:5px;
+    }
+
+    /* general sibling selector (~) */
+    h3 ~ p{
+      color:#555;
+      border-left:4px solid #007acc;
+      padding-left:6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+  </header>
+
+  <main>
+    <h2>Basic Selectors</h2>
+    <p>This is a normal paragraph selected by the <b>element selector</b>.</p>
+    <p class="highlight">This paragraph uses a class selector with background highlighting.</p>
+    <p id="special">This paragraph is styled using an ID selector.</p>
+
+    <h2>Attribute Selector Example</h2>
+    <p>Check out this <a href="https://www.example.com" target="_blank">Example Link</a> which opens in a new tab.</p>
+
+    <h2>Combinator Selectors</h2>
+    <ul>
+      <li>First list item (child selector applies)</li>
+      <li>Second list item</li>
+    </ul>
+
+    <h3>Sibling Selectors Example</h3>
+    <p>This paragraph comes right after h3 (affected by + or ~ selector).</p>
+    <p>Another sibling paragraph to show ~ selector in action.</p>
+
+    <div>
+      <p>This paragraph is inside a div (descendant selector applied).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSS Practice Page</p>
+  </footer>
+
+</body>
+</html>

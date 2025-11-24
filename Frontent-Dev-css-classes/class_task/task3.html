@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Selectors Demonstration</title>
+<style>
+  /* -------------------------------
+     ELEMENT SELECTOR
+     Applies style to all <p> tags
+  --------------------------------- */
+  p {
+    color: #333;
+    font-size: 16px;
+  }
+
+  /* -------------------------------
+     CLASS SELECTOR
+     Targets elements with class="highlight"
+  --------------------------------- */
+  .highlight {
+    background-color: #ffeeba;
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  /* -------------------------------
+     ID SELECTOR
+     Targets element with id="main-title"
+  --------------------------------- */
+  #main-title {
+    color: #007bff;
+    text-align: center;
+  }
+
+  /* -------------------------------
+     ATTRIBUTE SELECTOR
+     Styles <a> tags that have target="_blank"
+  --------------------------------- */
+  a[target="_blank"] {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a[target="_blank"]:hover {
+    text-decoration: underline;
+  }
+
+  /* -------------------------------
+     DESCENDANT SELECTOR (space)
+     Targets <li> inside <ul> inside <div class="menu">
+  --------------------------------- */
+  .menu ul li {
+    color: #555;
+    padding: 4px;
+  }
+
+  /* -------------------------------
+     CHILD COMBINATOR (>)
+     Targets only direct <p> children of <section>
+  --------------------------------- */
+  section > p {
+    color: #d63384;
+  }
+
+  /* -------------------------------
+     ADJACENT SIBLING (+)
+     Styles <p> immediately after an <h2>
+  --------------------------------- */
+  h2 + p {
+    font-style: italic;
+    color: #6f42c1;
+  }
+
+  /* -------------------------------
+     GENERAL SIBLING (~)
+     Styles all <p> after <h3> (same parent)
+  --------------------------------- */
+  h3 ~ p {
+    color: #20c997;
+  }
+
+  /* Basic layout styling */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+  }
+
+  header, footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="main-title">CSS Selector Demonstration</h1>
+</header>
+
+<main>
+  <section>
+    <h2>1. Element, Class, and ID Selectors</h2>
+    <p>This is a normal paragraph using <b>element selector</b>.</p>
+    <p class="highlight">This one uses a <b>class selector (.highlight)</b>.</p>
+    <p id="unique">You can also use an <b>ID selector (#unique)</b> for single elements.</p>
+  </section>
+
+  <section>
+    <h2>2. Attribute Selector</h2>
+    <p>Visit <a href="https://example.com" target="_blank">Example Website</a> — it uses an <b>attribute selector</b> for links with <code>target="_blank"</code>.</p>
+  </section>
+
+  <section class="menu">
+    <h2>3. Descendant Selector</h2>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Combinators</h2>
+    <p>This paragraph is a <b>direct child</b> of &lt;section&gt; (child combinator &gt;).</p>
+
+    <h3>Example of Sibling Combinators</h3>
+    <p>This one is right after an &lt;h3&gt; (adjacent sibling +).</p>
+    <p>And this one also comes after &lt;h3&gt; (general sibling ~).</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 CSS Selectors Demo</p>
+</footer>
+
+</body>
+</html>

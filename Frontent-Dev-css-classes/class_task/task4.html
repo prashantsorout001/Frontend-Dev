@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Gallery</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* --- GRID CONTAINER --- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  /* --- EACH IMAGE CARD --- */
+  figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+
+  figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+    display: block;
+  }
+
+  /* --- DARK OVERLAY ON HOVER --- */
+  figure::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  figure:hover::before {
+    opacity: 1;
+  }
+
+  figure:hover img {
+    transform: scale(1.1);
+  }
+
+  /* --- CAPTIONS --- */
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  figure:hover figcaption {
+    opacity: 1;
+  }
+
+  /* --- RESPONSIVE --- */
+  /* @media (max-width: 700px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  } */
+</style>
+
+
+<div class="gallery">
+  <figure>
+    <img src="https://picsum.photos/id/1015/600/400" alt="Mountain View">
+    <figcaption>Mountain View</figcaption>
+  </figure>
+  <figure>
+    <img src="https://picsum.photos/id/1025/600/400" alt="Dog in Field">
+    <figcaption>Dog in Field</figcaption>
+  </figure>
+  <figure>
+    <img src="https://picsum.photos/id/1035/600/400" alt="Waterfall">
+    <figcaption>Waterfall</figcaption>
+  </figure>
+  <figure>
+    <img src="https://picsum.photos/id/1041/600/400" alt="Waves">
+    <figcaption>Waves</figcaption>
+  </figure>
+  <figure>
+    <img src="https://picsum.photos/id/1026/600/400" alt="Trains">
+    <figcaption>Trains</figcaption>
+  </figure>
+  <figure>
+    <img src="https://picsum.photos/id/1069/600/400" alt="Fish">
+    <figcaption>Fish</figcaption>
+  </figure>
+</div>
+</body>
+</html>

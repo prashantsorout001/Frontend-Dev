@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Demonstration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fa;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .demo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  /* --- LINKS --- */
+  a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    background: #007bff;
+    color: white;
+  }
+
+  a:focus {
+    outline: 3px solid #ffcc00;
+  }
+
+  a:active {
+    background: #004085;
+  }
+
+  /* --- BUTTONS --- */
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #28a745;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #218838;
+  }
+
+  button:focus {
+    outline: 3px solid #ffcc00;
+  }
+
+  button:active {
+    background: #1e7e34;
+    transform: scale(0.95);
+  }
+
+  /* --- LIST ITEMS --- */
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+  }
+
+  li {
+    background: #e9ecef;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  li:hover {
+    background: #adb5bd;
+  }
+
+  /* Highlight alternate items using nth-child */
+  li:nth-child(odd) {
+    background: #d6e4ff;
+  }
+
+  li:nth-child(even) {
+    background: #ffe8cc;
+  }
+
+  /* Description styling */
+  .desc {
+    width: 50%;
+    color: #444;
+    font-size: 15px;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="section">
+    <div class="demo">
+      <a href="#">Hover Me</a>
+      <a href="#">Focus Me</a>
+      <a href="#">Active Me</a>
+    </div>
+    <div class="desc">
+      <b>Links:</b>  
+      <br>:hover → blue background  
+      <br>:focus → yellow outline  
+      <br>:active → dark blue press effect
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="demo">
+      <button>Hover</button>
+      <button>Focus</button>
+      <button>Active</button>
+    </div>
+    <div class="desc">
+      <b>Buttons:</b>  
+      <br>:hover → darker green  
+      <br>:focus → yellow outline  
+      <br>:active → pressed with scale
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="demo">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </div>
+    <div class="desc">
+      <b>List Items:</b>  
+      <br>:nth-child(odd/even) → alternate colors  
+      <br>:hover → darker shade
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

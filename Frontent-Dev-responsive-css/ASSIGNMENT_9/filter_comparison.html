@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q8 - Filter Comparison</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial, sans-serif;margin:0;padding:30px;background:#f8fafc}
+.compare{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.compare figure{width:45%;max-width:460px;margin:0;background:#fff;padding:8px;border-radius:8px;box-shadow:0 6px 12px rgba(0,0,0,0.06);transition:filter .4s ease}
+.compare img{width:100%;height:auto;display:block;border-radius:6px;transition:filter .4s ease}
+.right img{filter:brightness(.6) contrast(1.2)}
+.right:hover img{filter:none}
+.caption{text-align:center;padding:10px}
+@media (max-width:700px){ .compare{flex-direction:column} .compare figure{width:100%} }
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Before / After Filter</h1>
+<div class="compare">
+  <figure class="left">
+    <img src="https://picsum.photos/seed/left/800/500" alt="">
+    <figcaption class="caption">Original</figcaption>
+  </figure>
+  <figure class="right">
+    <img src="https://picsum.photos/seed/right/800/500" alt="">
+    <figcaption class="caption">With filter (hover to remove)</figcaption>
+  </figure>
+</div>
+</body>
+</html>

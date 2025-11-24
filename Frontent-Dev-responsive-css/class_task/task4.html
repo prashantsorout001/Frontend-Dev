@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Typography — rem</title>
+  <style>
+    html {
+      font-size: calc(0.9rem + 0.4vw); 
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.6;
+      margin: 2rem;
+      color: #111;
+    }
+
+    h1 {
+      font-size: 2.25rem; 
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      font-size: 1rem; 
+      margin: 0 0 1rem;
+      max-width: 60ch;
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive heading (rem)</h1>
+  <p>
+    This paragraph uses <code>rem</code> units. The root <code>html</code> font-size is
+    set with <code>calc()</code> and <code>vw</code> so text grows smoothly on larger screens.
+  </p>
+</body>
+</html>

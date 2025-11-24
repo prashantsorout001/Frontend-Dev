@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q6 - Responsive CSS Cheat Sheet</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial, sans-serif;margin:0;padding:30px;background:#f7fafc}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 12px rgba(0,0,0,0.06);transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 20px rgba(0,0,0,0.09)}
+.card h3{margin:0 0 8px}
+.term{font-weight:700;color:#0d6efd}
+@media (max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .card{display:block}
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Responsive CSS Cheat Sheet</h1>
+<div class="grid">
+  <div class="card"><h3>Filters</h3><p class="term">filter: grayscale(100%);</p><p>Apply visual effects to images or elements.</p></div>
+  <div class="card"><h3>Media Queries</h3><p class="term">@media (max-width: 768px) { ... }</p><p>Change styles based on viewport size.</p></div>
+  <div class="card"><h3>Responsive Design</h3><p class="term">flexbox / grid / fluid units</p><p>Build layouts that adapt to different screens.</p></div>
+  <div class="card"><h3>Typography</h3><p class="term">font-size: clamp(...)</p><p>Scale font sizes smoothly using clamp() and relative units.</p></div>
+</div>
+</body>
+</html>

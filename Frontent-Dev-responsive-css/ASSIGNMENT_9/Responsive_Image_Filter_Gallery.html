@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Filter Gallery</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Image container */
+figure {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+figure:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styling */
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+/* Filters */
+.img1 { filter: blur(3px); }
+.img2 { filter: grayscale(100%); }
+.img3 { filter: sepia(80%); }
+.img4 { filter: brightness(70%); }
+.img5 { filter: contrast(160%); }
+.img6 { filter: hue-rotate(120deg); }
+
+/* Remove filter on hover */
+.gallery img:hover {
+  filter: none;
+}
+
+/* Caption */
+figcaption {
+  padding: 10px;
+  font-size: 15px;
+  color: #555;
+  background: #f0f0f0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1>Responsive Image Filter Gallery</h1>
+
+<div class="gallery">
+  <figure>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-L1fCI_I_c5ZTjedyL27hAHaE8?pid=Api&P=0&h=180" class="img1" alt="Blur Effect">
+    <figcaption>Blur Filter</figcaption>
+  </figure>
+  <figure>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-L1fCI_I_c5ZTjedyL27hAHaE8?pid=Api&P=0&h=180" class="img2" alt="Grayscale">
+    <figcaption>Grayscale Filter</figcaption>
+  </figure>
+  <figure>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-L1fCI_I_c5ZTjedyL27hAHaE8?pid=Api&P=0&h=180" class="img3" alt="Sepia">
+    <figcaption>Sepia Filter</figcaption>
+  </figure>
+  <figure>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-L1fCI_I_c5ZTjedyL27hAHaE8?pid=Api&P=0&h=180" class="img4" alt="Brightness">
+    <figcaption>Brightness Filter</figcaption>
+  </figure>
+  <figure>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-L1fCI_I_c5ZTjedyL27hAHaE8?pid=Api&P=0&h=180" class="img5" alt="Contrast">
+    <figcaption>Contrast Filter</figcaption>
+  </figure>
+  <figure>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-L1fCI_I_c5ZTjedyL27hAHaE8?pid=Api&P=0&h=180" class="img6" alt="Hue Rotate">
+    <figcaption>Hue-Rotate Filter</figcaption>
+  </figure>
+</div>
+
+</body>
+</html>

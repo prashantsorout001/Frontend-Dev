@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Q3 - Responsive Cards</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial, sans-serif;margin:0;background:#f6f7fb;padding:30px}
+.container{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.card{flex:1 1 220px;max-width:260px;background:#fff;padding:16px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.08);transition:background .25s ease,transform .25s ease}
+.card:hover{background:#f0f8ff;transform:translateY(-6px)}
+.card h3{margin:0 0 8px}
+.card p{margin:0 0 12px}
+
+/* Desktop 4 columns (by allowing enough width) */
+/* Tablet: 2 columns */
+@media (max-width:900px){
+  .container{justify-content:space-between}
+  .card{flex:1 1 calc(50% - 20px);max-width:none}
+}
+/* Mobile: 1 column */
+@media (max-width:600px){
+  .card{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Responsive Cards</h1>
+<div class="container">
+  <div class="card"><h3>Card One</h3><p>Info about product or service.</p><button>Add</button></div>
+  <div class="card"><h3>Card Two</h3><p>Info about product or service.</p><button>Add</button></div>
+  <div class="card"><h3>Card Three</h3><p>Info about product or service.</p><button>Add</button></div>
+  <div class="card"><h3>Card Four</h3><p>Info about product or service.</p><button>Add</button></div>
+</div>
+</body>
+</html>
